@@ -32,10 +32,9 @@ console.log(fahrenheitToCelsius(32));
 //isDivisible(4, 2);
 // Output: true
 export function isDivisibleBy2And4(num1: number, num2: number) {
-  if ((num1 % 4 === 0) && (num2 % 2 === 0)) {
+  if (num1 % 4 === 0 && num2 % 2 === 0) {
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -43,6 +42,14 @@ console.log(isDivisibleBy2And4(4, 2));
 
 //oddOrEven(3);
 // Output: 'odd'
+export function oddOrEven(num: number) {
+  if (num % 2 === 0) {
+    return "even";
+  } else {
+    return "odd";
+  }
+}
+console.log(oddOrEven(4));
 
 //countVowels("hello");
 // Output: 2

@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { celsiusToFahrenheit, fahrenheitToCelsius, isDivisibleBy2And4, minutesToSeconds, sum } from './function-assignments';
+import { celsiusToFahrenheit, fahrenheitToCelsius, isDivisibleBy2And4, minutesToSeconds, oddOrEven, sum } from './function-assignments';
 
 test('adds 1 + 2 to equal 3', () => {
     // Arrange
@@ -57,4 +57,16 @@ test('number is divisible by 4 & 2', () => {
 
     // Assert
     expect(result).toBe(true);
+})
+
+test('tests if number is odd or even', () => {
+    // Arrange
+    const num = 4;
+    const even = num % 2 === 0;
+
+    // Act
+    const result = oddOrEven(num);
+    
+    // Assert
+    expect(result).toBe("even");
 })
