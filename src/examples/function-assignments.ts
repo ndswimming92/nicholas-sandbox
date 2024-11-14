@@ -24,13 +24,22 @@ console.log(celsiusToFahrenheit(0));
 //fahrenheitToCelsius(32);
 // Output: 0
 export function fahrenheitToCelsius(fahrenheit: number) {
-  const celsius = (fahrenheit-32) * (5/9);
+  const celsius = (fahrenheit - 32) * (5 / 9);
   return celsius;
 }
 console.log(fahrenheitToCelsius(32));
 
 //isDivisible(4, 2);
 // Output: true
+export function isDivisibleBy2And4(num1: number, num2: number) {
+  if ((num1 % 4 === 0) && (num2 % 2 === 0)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(isDivisibleBy2And4(4, 2));
 
 //oddOrEven(3);
 // Output: 'odd'

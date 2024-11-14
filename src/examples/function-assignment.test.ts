@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { celsiusToFahrenheit, fahrenheitToCelsius, minutesToSeconds, sum } from './function-assignments';
+import { celsiusToFahrenheit, fahrenheitToCelsius, isDivisibleBy2And4, minutesToSeconds, sum } from './function-assignments';
 
 test('adds 1 + 2 to equal 3', () => {
     // Arrange
@@ -45,4 +45,16 @@ test('converts 32 fahrenheit to 0 celsius', () => {
 
     // Assert
     expect(result).toBe(0);
+})
+
+test('number is divisible by 4 & 2', () => {
+    // Arrange
+    const num1 = 4;
+    const num2 = 8;
+
+    // Act
+    const result = isDivisibleBy2And4(num1, num2);
+
+    // Assert
+    expect(result).toBe(true);
 })
