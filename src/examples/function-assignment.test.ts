@@ -44,5 +44,5 @@ test('converts 32 fahrenheit to 0 celsius', () => {
     const result = fahrenheitToCelsius(fahrenheit);
 
     // Assert
-    expect(result).toBe(0)
+    expect(result).toBe(0);
 })
