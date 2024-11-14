@@ -1,6 +1,7 @@
 import { expect, test } from "vitest";
 import {
   celsiusToFahrenheit,
+  countVowels,
   fahrenheitToCelsius,
   isDivisibleBy2And4,
   minutesToSeconds,
@@ -68,7 +69,6 @@ test("number is divisible by 4 & 2", () => {
 test("tests if number is odd or even", () => {
   // Arrange
   const num = 4;
-  const even = num % 2 === 0;
 
   // Act
   const result = oddOrEven(num);
@@ -76,3 +76,15 @@ test("tests if number is odd or even", () => {
   // Assert
   expect(result).toBe("even");
 });
+
+test("counts how many vowls are in the word", () => {
+    // Arrange 
+    const word = "";
+    let count = 0;
+
+    // Act
+    const result = countVowels(word)
+
+    // Assert
+    expect(result).toBe(count);
+})
