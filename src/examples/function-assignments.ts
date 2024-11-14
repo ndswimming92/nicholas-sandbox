@@ -53,6 +53,17 @@ console.log(oddOrEven(4));
 
 //countVowels("hello");
 // Output: 2
+export function countVowels(word: string) {
+  const vowels = ["a", "e", "i", "o", "u", "y"];
+  let count = 0;
+
+  for ( let i = 0; i < word.length; i++ ) {
+    if ( vowels.includes(word[i].toLowerCase()) )
+      count++;
+  }
+    return count;
+}
+console.log(countVowels("hippopotomas"))
 
 //firstCharacter("Hello");
 // Output: "H"
