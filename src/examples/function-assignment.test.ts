@@ -7,6 +7,7 @@ import {
   isDivisibleBy2And4,
   minutesToSeconds,
   oddOrEven,
+  reverseString,
   sum,
 } from "./function-assignments";
 
@@ -99,4 +100,15 @@ test("returns first letter of word", () => {
 
   // Assert
   expect(result).toBe("H");
+});
+
+test("return a string reversed", () => {
+  // Arrange
+  const word = "Hello";
+
+  // Act
+  const result = reverseString(word);
+
+  // Act
+  expect(result).toBe("olleH");
 });

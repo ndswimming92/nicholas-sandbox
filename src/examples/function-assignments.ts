@@ -73,3 +73,9 @@ console.log(firstCharacter("Hello"));
 
 //reverseString("Hello");
 // Output: "olleH"
+export function reverseString(word: string) {
+  const stringToArray = word.split("");
+  stringToArray.reverse();
+  return stringToArray.join("");
+}
+console.log(reverseString("Hello"));
