@@ -79,3 +79,5 @@ export function reverseString(word: string) {
   return stringToArray.join("");
 }
 console.log(reverseString("Hello"));
+
+// Completed assignments 11/15
