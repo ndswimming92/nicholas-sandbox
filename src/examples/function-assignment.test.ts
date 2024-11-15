@@ -3,6 +3,7 @@ import {
   celsiusToFahrenheit,
   countVowels,
   fahrenheitToCelsius,
+  firstCharacter,
   isDivisibleBy2And4,
   minutesToSeconds,
   oddOrEven,
@@ -78,13 +79,24 @@ test("tests if number is odd or even", () => {
 });
 
 test("counts how many vowls are in the word", () => {
-    // Arrange 
-    const word = "";
-    let count = 0;
+  // Arrange
+  const word = "";
+  let count = 0;
 
-    // Act
-    const result = countVowels(word)
+  // Act
+  const result = countVowels(word);
 
-    // Assert
-    expect(result).toBe(count);
-})
+  // Assert
+  expect(result).toBe(count);
+});
+
+test("returns first letter of word", () => {
+  // Arrange
+  const word = "Hello";
+
+  // Act
+  const result = firstCharacter(word);
+
+  // Assert
+  expect(result).toBe("H");
+});

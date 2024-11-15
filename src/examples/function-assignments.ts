@@ -57,16 +57,19 @@ export function countVowels(word: string) {
   const vowels = ["a", "e", "i", "o", "u", "y"];
   let count = 0;
 
-  for ( let i = 0; i < word.length; i++ ) {
-    if ( vowels.includes(word[i].toLowerCase()) )
-      count++;
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i].toLowerCase())) count++;
   }
-    return count;
+  return count;
 }
-console.log(countVowels("hippopotomas"))
+console.log(countVowels("hippopotomas"));
 
 //firstCharacter("Hello");
 // Output: "H"
+export function firstCharacter(word: string) {
+  return word[0];
+}
+console.log(firstCharacter("Hello"));
 
 //reverseString("Hello");
 // Output: "olleH"
