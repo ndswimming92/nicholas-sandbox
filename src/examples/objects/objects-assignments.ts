@@ -1,12 +1,4 @@
-export type Car = {
-  make: string;
-  model: string;
-  year: number;
-  color?: string;
-  mpg: number;
-  price: number;
-  miles: number;
-};
+import { Car } from "./types/Car";
 
 const cars: Car[] = [
   {
@@ -46,4 +38,17 @@ const cars: Car[] = [
 export function carToString(car: Car): string {
   return `${car.year} ${car.make} ${car.model}`;
 }
-console.log(carToString(cars[0]));
+console.log(carToString(cars[1]));
+
+export function findHighestMPG(cars: Car[]): string {
+  let highestMPG = cars[0];
+
+  cars.forEach((element) => {
+    if (element.mpg > highestMPG.mpg) {
+      highestMPG = element;
+    }
+  });
+
+  return ` make: ${highestMPG.make}, model: ${highestMPG.model}, year: ${highestMPG.year}, mpg: ${highestMPG.mpg}, price: ${highestMPG.price}`;
+}
+console.log(`Highest MPG car: ${findHighestMPG(cars)}`);
