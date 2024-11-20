@@ -76,3 +76,10 @@ export function averagePrice(cars: Car[]): number {
   return avgPrice;
 }
 console.log(averagePrice(cars));
+
+// Find all the car prices
+export function carPrices(cars: Car[]): number[] {
+  const allPrices = cars.map((car) => car.price);
+  return allPrices;
+}
+console.log(carPrices(cars));
