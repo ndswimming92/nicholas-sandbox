@@ -40,6 +40,7 @@ export function carToString(car: Car): string {
 }
 console.log(carToString(cars[1]));
 
+// Find car with Highest MPG
 export function findHighestMPG(cars: Car[]): string {
   let highestMPG = cars[0];
 
@@ -52,3 +53,16 @@ export function findHighestMPG(cars: Car[]): string {
   return ` make: ${highestMPG.make}, model: ${highestMPG.model}, year: ${highestMPG.year}, mpg: ${highestMPG.mpg}, price: ${highestMPG.price}`;
 }
 console.log(`Highest MPG car: ${findHighestMPG(cars)}`);
+
+// Find lowest Price Car
+export function findlowestPrice(cars: Car[]): string {
+  let lowestPrice = cars[0];
+
+  cars.forEach((element) => {
+    if (element.price < lowestPrice.price) {
+      lowestPrice = element;
+    }
+  });
+
+  return `make: ${lowestPrice.make}, model: ${lowestPrice.model}, year: ${lowestPrice.year}, mpg: ${lowestPrice.mpg}, price: ${lowestPrice.price}`;
+}
