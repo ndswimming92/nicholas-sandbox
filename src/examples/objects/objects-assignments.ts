@@ -66,3 +66,13 @@ export function findlowestPrice(cars: Car[]): string {
 
   return `make: ${lowestPrice.make}, model: ${lowestPrice.model}, year: ${lowestPrice.year}, mpg: ${lowestPrice.mpg}, price: ${lowestPrice.price}`;
 }
+
+// Find average price of car
+export function averagePrice(cars: Car[]): number {
+  const totalPrice = cars.reduce((sum, car) => sum + car.price, 0);
+
+  const avgPrice = totalPrice / cars.length;
+
+  return avgPrice;
+}
+console.log(averagePrice(cars));
