@@ -83,3 +83,10 @@ export function carPrices(cars: Car[]): number[] {
   return allPrices;
 }
 console.log(carPrices(cars));
+
+// Find all the car models
+export function carModels(cars: Car[]): string[] {
+  const allModels = cars.map((car) => car.model);
+  return allModels;
+}
+console.log(carModels(cars));

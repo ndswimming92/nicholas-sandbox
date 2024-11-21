@@ -1,6 +1,7 @@
 import { expect, test } from "vitest";
 import {
   averagePrice,
+  carModels,
   carPrices,
   carToString,
   findHighestMPG,
@@ -8,7 +9,7 @@ import {
 } from "./objects-assignments";
 import { Car } from "./types/Car";
 
-test("Return a cars make and model as a string", () => {
+test('Return a cars make and model as a string', () => {
   // Arrange
   const exampleCar = {
     make: "Ford",
@@ -24,10 +25,10 @@ test("Return a cars make and model as a string", () => {
 
   // Assert
   expect(result).toBe("1969 Ford Mustang");
-  console.log(result);
+  
 });
 
-test("Return the car with highest MPG", () => {
+test('Return the car with highest MPG', () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -71,10 +72,10 @@ test("Return the car with highest MPG", () => {
   expect(result).toBe(
     ` make: Honda, model: Civic, year: 2010, mpg: 35, price: 5000`
   );
-  console.log(result);
+  
 });
 
-test("Return the car with the lowest price", () => {
+test('Return the car with the lowest price', () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -120,7 +121,7 @@ test("Return the car with the lowest price", () => {
   );
 });
 
-test("Return the average price of all the cars", () => {
+test('Return the average price of all the cars', () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -164,7 +165,7 @@ test("Return the average price of all the cars", () => {
   expect(result).toBe(3750);
 });
 
-test("Return the price of all the cars", () => {
+test('Return the price of all the cars', () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -214,3 +215,54 @@ test("Return the price of all the cars", () => {
     ]
   `);
 });
+
+test('Return the models of all the cars', () => {
+  // Arrange
+  const cars: Car[] = [
+    {
+      make: "Ford",
+      model: "Mustang",
+      year: 1969,
+      mpg: 15,
+      price: 5000,
+      miles: 10000,
+    },
+    {
+      make: "Ford",
+      model: "F-150",
+      year: 2018,
+      mpg: 20,
+      price: 3000,
+      miles: 50000,
+    },
+    {
+      make: "Toyota",
+      model: "Corolla",
+      year: 2002,
+      mpg: 30,
+      price: 2000,
+      miles: 15000,
+    },
+    {
+      make: "Honda",
+      model: "Civic",
+      year: 2010,
+      mpg: 35,
+      price: 5000,
+      miles: 100000,
+    },
+  ];
+
+  // Act
+  const result = carModels(cars);
+
+  // Assert
+  expect(result).toMatchInlineSnapshot(`
+    [
+      "Mustang",
+      "F-150",
+      "Corolla",
+      "Civic",
+    ]
+  `)
+})
