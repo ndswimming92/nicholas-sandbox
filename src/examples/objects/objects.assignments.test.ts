@@ -27,7 +27,7 @@ test("Return a cars make and model as a string", () => {
   console.log(result);
 });
 
-test("Find the car with highest MPG.", () => {
+test("Return the car with highest MPG", () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -74,7 +74,7 @@ test("Find the car with highest MPG.", () => {
   console.log(result);
 });
 
-test("Find the car with the lowest price", () => {
+test("Return the car with the lowest price", () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -120,7 +120,7 @@ test("Find the car with the lowest price", () => {
   );
 });
 
-test("returns the average price of all the cars", () => {
+test("Return the average price of all the cars", () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -164,7 +164,7 @@ test("returns the average price of all the cars", () => {
   expect(result).toBe(3750);
 });
 
-test("Returns the priceod all the cars", () => {
+test("Return the price of all the cars", () => {
   // Arrange
   const cars: Car[] = [
     {
@@ -205,5 +205,12 @@ test("Returns the priceod all the cars", () => {
   const result = carPrices(cars);
 
   // Assert
-  expect(result).toStrictEqual([5000, 3000, 2000, 5000]);
+  expect(result).toMatchInlineSnapshot(`
+    [
+      5000,
+      3000,
+      2000,
+      5000,
+    ]
+  `);
 });
