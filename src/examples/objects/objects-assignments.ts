@@ -90,3 +90,12 @@ export function carModels(cars: Car[]): string[] {
   return allModels;
 }
 console.log(carModels(cars));
+
+// Find all cars under a certain price
+export function carsUnderPrice(cars: Car[], price: number): Car[] {
+  const underPrice = cars.filter((car) => car.price < price);
+
+  return underPrice;
+}
+
+console.log(carsUnderPrice(cars, 10000));
