@@ -18,12 +18,24 @@ function parseInput(rawInput: string): number[] {
 
 function getIncreaseCount(sonarNumbers: number[]): number {
   let totalIncrease = 0;
-  for (let i = 0; i < sonarNumbers.length-1; i++) {
-    if (sonarNumbers[i] < sonarNumbers[i + 1]) {
+  for (let i = 0; i < sonarNumbers.length - 1; i++) {
+    const currentWindowValue = getMeasurementWindowSum(sonarNumbers, i);
+    const nextWindowValue = getMeasurementWindowSum(sonarNumbers, i + 1);
+    console.log({ currentWindowValue, nextWindowValue });
+    if (currentWindowValue < nextWindowValue) {
       totalIncrease = totalIncrease + 1;
     }
   }
   return totalIncrease;
 }
 
-
+function getMeasurementWindowSum(
+  depthMeasurements: number[],
+  index: number
+): number {
+  return (
+    depthMeasurements[index] +
+    depthMeasurements[index + 1] +
+    depthMeasurements[index + 2]
+  );
+}
