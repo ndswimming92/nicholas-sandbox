@@ -4,17 +4,22 @@ const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
 console.log("Unsorted Input:");
 console.log(input, "\n");
 
-const currentFloor = landedOnFloor(input);
-console.log(currentFloor);
+const basementFloor = landedOnFloor(input);
+
+console.log({ basementFloor });
 
 function landedOnFloor(direction: string): number {
   let floorCount = 0;
   for (let i = 0; i < direction.length; i++) {
     if (direction[i] === "(") {
-      floorCount = floorCount + 1;
+      floorCount++;
     } else if (direction[i] === ")") {
-      floorCount = floorCount - 1;
+      floorCount--;
+    }
+
+    if (floorCount === -1) {
+      return i + 1;
     }
   }
-  return floorCount;
+  return -1;
 }

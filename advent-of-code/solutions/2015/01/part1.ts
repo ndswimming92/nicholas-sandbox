@@ -5,7 +5,7 @@ console.log("Unsorted Input:");
 console.log(input, "\n");
 
 const currentFloor = landedOnFloor(input);
-console.log(currentFloor);
+console.log({ currentFloor });
 
 function landedOnFloor(direction: string): number {
   let floorCount = 0;
