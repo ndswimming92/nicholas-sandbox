@@ -30,8 +30,9 @@ for (let i = 0; i < sortedColumn1.length; i++) {
   const a = sortedColumn1[i];
   const b = sortedColumn2[i];
 
-  const similarityScoreIncrease = a * getCountOfElementInArray(a, sortedColumn2);
-  
+  const similarityScoreIncrease =
+    a * getCountOfElementInArray(a, sortedColumn2);
+
   finalSimilarityScore = finalSimilarityScore + similarityScoreIncrease;
   console.log({ similarityScoreIncrease, finalSimilarityScore });
 }
@@ -48,18 +49,3 @@ function getCountOfElementInArray(num: number, numbers: number[]) {
 
   return count;
 }
-
-// getCountOfElementInArray(3, [1, 4, 6, 3, 4, 3]);
-
-// let differenceSum = 0;
-
-// for (let i = 0; i < sortedColumn1.length; i++) {
-//   const a = sortedColumn1[i];
-//   const b = sortedColumn2[i];
-
-//   const difference = a - b;
-//   const absDifference = Math.abs(difference);
-
-//   differenceSum = absDifference + differenceSum;
-//   console.log({ differenceSum, absDifference });
-// }

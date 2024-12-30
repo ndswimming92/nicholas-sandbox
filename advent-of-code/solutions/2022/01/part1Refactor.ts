@@ -4,11 +4,9 @@ const input = await Bun.file(`${import.meta.dir}/input.txt`).text();
 
 const elves = parseInput(input);
 const elfSums = elves.map(sumNumbers);
-const elfSumsSorted = elfSums.sort(compareNumbers);
-const topThreeElves = elfSumsSorted.slice(0, 3);
-const topThreeTotal = sumNumbers(topThreeElves);
+const largestElf = Math.max(...elfSums);
 
-console.log({ elfSums, elfSumsSorted, topThreeElves, topThreeTotal });
+console.log({elves, elfSums, largestElf });
 
 function parseInput(rawInput: string): number[][] {
   const rawElfStrings = rawInput.split("\n\n");
@@ -28,10 +26,4 @@ function sumNumbers(numbers: number[]): number {
   }
 
   return addedNumbers;
-}
-
-function compareNumbers(a: number, b: number) {
-  if (a > b) {
-    return -1;
-  } else return 1;
 }
