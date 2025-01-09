@@ -65,8 +65,8 @@ console.log({ reversedWords });
 
 function reverseWord(sentence: string): string {
   const arrayString = sentence.split(" ");
-  arrayString.reverse();
-  return arrayString.join(" ");
+  return arrayString.reverse().join(" ");
+  // return arrayString.join(" ");
 }
 
 //-------------->>>
@@ -103,3 +103,21 @@ console.log(`Numbers added = ${add(3, 4)}`);
 const greet = () => "Hello World!";
 
 console.log(`Greeting: ${greet()}`);
+
+//-------------->>>
+// Using Map() normal function
+
+const numbers = [2, 4, 1, 7, 12, 45, 90, 30];
+const newNumbers = numbers.map(doubleNumbers);
+
+console.log({ newNumbers });
+
+function doubleNumbers(number: number): number {
+  const doubling = number * 2;
+  return doubling;
+}
+
+// Usng Map() with arrow function
+
+const numberDoubled = numbers.map((number) => number * 2);
+console.log({ numberDoubled });
