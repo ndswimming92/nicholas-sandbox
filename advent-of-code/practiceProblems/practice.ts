@@ -121,3 +121,39 @@ function doubleNumbers(number: number): number {
 
 const numberDoubled = numbers.map((number) => number * 2);
 console.log({ numberDoubled });
+
+// type conversion:
+
+let x;
+let y;
+let z;
+
+x = Number(x);
+y = String(y);
+z = Boolean(z);
+
+console.log(x, typeof x);
+console.log(y, typeof y);
+console.log(z, typeof z);
+
+// Method Chaining------------>>
+// No method chaining:
+
+let username = "BetterFasTErSmaRter  ";
+
+username = username.trim();
+let letter = username.charAt(0);
+letter = letter.toUpperCase();
+
+let extraChars = username.slice(1);
+extraChars = extraChars.toLowerCase();
+username = letter + extraChars;
+
+console.log({ username });
+
+// With Method Chaining:
+
+username =
+  username.trim().charAt(0).toUpperCase() +
+  username.trim().slice(1).toLowerCase();
+console.log({ username }, username.length);
